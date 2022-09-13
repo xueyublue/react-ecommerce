@@ -2,8 +2,10 @@ import styled from "styled-components";
 
 const Container = styled.div`
   flex: 1;
-  margin: 3px;
-  height: 70vh;
+  margin: 5px;
+  height: 60vh;
+  min-height: 300px;
+  max-height: 600px;
   position: relative;
 `;
 
