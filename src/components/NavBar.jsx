@@ -45,6 +45,7 @@ const Center = styled.div`
 
 const Logo = styled.h1`
   font-weight: bold;
+  cursor: pointer;
 `;
 
 const Right = styled.div`
@@ -58,6 +59,9 @@ const MenuItem = styled.div`
   font-size: 14px;
   cursor: pointer;
   margin-left: 25px;
+  :hover {
+    color: teal;
+  }
 `;
 
 const NavBar = () => {
