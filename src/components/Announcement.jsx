@@ -9,6 +9,10 @@ const Container = styled.div`
   justify-content: center;
   font-size: 14px;
   font-weight: bold;
+  cursor: pointer;
+  :hover {
+    text-decoration: underline;
+  }
 `;
 
 const Announcement = () => {
