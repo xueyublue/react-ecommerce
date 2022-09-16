@@ -65,8 +65,10 @@ const FilterColor = styled.div`
   cursor: pointer;
   opacity: 0.75;
   margin-left: 10px;
-  :hover {
+  transition: all 0.25s ease;
+  &:hover {
     opacity: 0.9;
+    transform: scale(1.1);
   }
 `;
 
@@ -90,6 +92,17 @@ const AmountContainer = styled.div`
   font-weight: 500;
 `;
 
+const RemoveAndAddContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  &:hover {
+    color: teal;
+  }
+`;
+
 const Amount = styled.span`
   width: 30px;
   height: 30px;
@@ -107,7 +120,8 @@ const Button = styled.button`
   background-color: white;
   cursor: pointer;
   font-weight: 500;
-  :hover {
+  transition: all 0.25s ease;
+  &:hover {
     background-color: teal;
     color: white;
   }
@@ -150,9 +164,13 @@ const Product = () => {
           </FilterContainer>
           <AddContainer>
             <AmountContainer>
-              <Remove />
+              <RemoveAndAddContainer>
+                <Remove />
+              </RemoveAndAddContainer>
               <Amount>1</Amount>
-              <Add />
+              <RemoveAndAddContainer>
+                <Add />
+              </RemoveAndAddContainer>
             </AmountContainer>
             <Button>ADD TO CART</Button>
           </AddContainer>
