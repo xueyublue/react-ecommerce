@@ -3,6 +3,7 @@ import NavBar from "./../components/NavBar";
 import Announcement from "./../components/Announcement";
 import Footer from "./../components/Footer";
 import Newsletter from "./../components/Newsletter";
+import { Add, Remove } from "@mui/icons-material";
 
 const Container = styled.div``;
 
@@ -41,6 +42,7 @@ const TopButton = styled.button`
 const Bottom = styled.div`
   display: flex;
   justify-content: space-between;
+  margin-top: 20px;
 `;
 
 const Info = styled.div`
@@ -83,10 +85,65 @@ const ProductSize = styled.span``;
 
 const PriceDetail = styled.div`
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+
+const ProductAmountContainer = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+const ProductAmount = styled.div`
+  font-size: 24px;
+  margin: 5px;
+`;
+
+const ProductPrice = styled.div`
+  font-size: 30px;
+`;
+
+const Hr = styled.hr`
+  background-color: #eee;
+  border: none;
+  height: 1px;
 `;
 
 const Summary = styled.div`
   flex: 1;
+  border: 0.5px solid lightgray;
+  border-radius: 10px;
+  padding: 20px;
+  height: 50vh;
+  min-height: 275px;
+`;
+
+const SummaryTitle = styled.h1`
+  font-weight: 500;
+`;
+
+const SummaryItem = styled.div`
+  margin: 20px 0px;
+  display: flex;
+  justify-content: space-between;
+  font-weight: ${(props) => props.type === "total" && "bold"};
+  font-size: ${(props) => props.type === "total" && "20px"};
+`;
+
+const SummaryItemText = styled.span``;
+
+const SummaryItemPrice = styled.span``;
+
+const SumamryButton = styled.button`
+  width: 100%;
+  padding: 10px;
+  background-color: teal;
+  color: white;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
 `;
 
 const Cart = () => {
@@ -122,10 +179,62 @@ const Cart = () => {
                   </ProductSize>
                 </Details>
               </ProductDetail>
-              <PriceDetail>price</PriceDetail>
+              <PriceDetail>
+                <ProductAmountContainer>
+                  <Add />
+                  <ProductAmount>2</ProductAmount>
+                  <Remove />
+                </ProductAmountContainer>
+                <ProductPrice>$ 180</ProductPrice>
+              </PriceDetail>
+            </Product>
+            <Hr />
+            <Product>
+              <ProductDetail>
+                <Image src="https://i.pinimg.com/originals/2d/af/f8/2daff8e0823e51dd752704a47d5b795c.png" />
+                <Details>
+                  <ProductName>
+                    <b>Product:</b> HAKURA T-SHIRT
+                  </ProductName>
+                  <ProductId>
+                    <b>ID:</b> 4125635441655
+                  </ProductId>
+                  <ProductColor color="darkgray" />
+                  <ProductSize>
+                    <b>Size:</b> M
+                  </ProductSize>
+                </Details>
+              </ProductDetail>
+              <PriceDetail>
+                <ProductAmountContainer>
+                  <Add />
+                  <ProductAmount>1</ProductAmount>
+                  <Remove />
+                </ProductAmountContainer>
+                <ProductPrice>$ 55</ProductPrice>
+              </PriceDetail>
             </Product>
           </Info>
-          <Summary>Sumamry</Summary>
+          <Summary>
+            <SummaryTitle>ORDER SUMMARY</SummaryTitle>
+            <SummaryItem>
+              <SummaryItemText>Subtotal</SummaryItemText>
+              <SummaryItemPrice>$ 80</SummaryItemPrice>
+            </SummaryItem>
+            <SummaryItem>
+              <SummaryItemText>Estimated Shipping</SummaryItemText>
+              <SummaryItemPrice>$ 5.90</SummaryItemPrice>
+            </SummaryItem>
+            <SummaryItem>
+              <SummaryItemText>Shipping Discount</SummaryItemText>
+              <SummaryItemPrice>$ -5.90</SummaryItemPrice>
+            </SummaryItem>
+            <SummaryItem type="total">
+              <SummaryItemText>Total</SummaryItemText>
+              <SummaryItemPrice>$ 80</SummaryItemPrice>
+            </SummaryItem>
+            <SumamryButton>CHECKOUT NOW</SumamryButton>
+          </Summary>
         </Bottom>
       </Wrapper>
       <Newsletter />
