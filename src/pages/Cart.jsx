@@ -4,11 +4,13 @@ import Announcement from "./../components/Announcement";
 import Footer from "./../components/Footer";
 import Newsletter from "./../components/Newsletter";
 import { Add, Remove } from "@mui/icons-material";
+import { mobile } from "../responsive";
 
 const Container = styled.div``;
 
 const Wrapper = styled.div`
   padding: 20px;
+  ${mobile({ padding: "10px" })}
 `;
 
 const Title = styled.h1`
@@ -28,6 +30,7 @@ const TopText = styled.span`
   text-decoration: underline;
   cursor: pointer;
   margin: 0px 10px;
+  ${mobile({ display: "none" })}
 `;
 
 const TopButton = styled.button`
@@ -43,6 +46,7 @@ const Bottom = styled.div`
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
+  ${mobile({ flexDirection: "column" })}
 `;
 
 const Info = styled.div`
@@ -52,6 +56,7 @@ const Info = styled.div`
 const Product = styled.div`
   display: flex;
   justify-content: space-between;
+  ${mobile({ flexDirection: "column" })}
 `;
 
 const ProductDetail = styled.div`
